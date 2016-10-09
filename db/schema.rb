@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009164452) do
+ActiveRecord::Schema.define(version: 20161009173813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20161009164452) do
   create_table "todo_items", force: :cascade do |t|
     t.string   "content"
     t.integer  "todo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "completed_at"
   end
 
   add_index "todo_items", ["todo_id"], name: "index_todo_items_on_todo_id", using: :btree
